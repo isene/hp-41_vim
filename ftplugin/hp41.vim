@@ -48,3 +48,30 @@ if !exists("*s:Renumber")
 		call cursor(s:linenumber,s:colnumber)
     endfunction
 endif
+
+if !exists("*GTOLBL") 
+  function! GTOLBL()
+    let current_line = getline('.')
+    if match(current_line,'GTO \d\d') >= 0
+      let ref_lbl = matchstr(current_line,"GTO [0-9][0-9]")
+      let ref_lbl = substitute(ref_lbl, "GTO", 'LBL', 'g')
+      call search(ref_lbl)
+      let new_line = getline('.')
+      if new_line == current_line
+        echo "No such LBL"
+      endif
+		elseif match(current_line,'XEQ \d\d') >= 0
+      let ref_lbl = matchstr(current_line,"XEQ [0-9][0-9]")
+      let ref_lbl = substitute(ref_lbl, "XEQ", 'LBL', 'g')
+      call search(ref_lbl)
+      let new_line = getline('.')
+      if new_line == current_line
+        echo "No such LBL"
+      endif
+    else
+      echo "No valid LBL referenced"
+    endif
+  endfunction
+endif
+
+nmap gL m':call GTOLBL()<CR>
