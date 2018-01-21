@@ -17,41 +17,34 @@ set nrformats-=octal
 
 map <CR> :call Renumber()<CR>
 imap <CR> <CR><C-Y><C-Y><C-Y><SPACE><ESC>0<C-A>:call Renumber()<CR>A
-iab a AVIEW
-iab A AVIEW
-iab c CLX
-iab C CLX
-iab d DSE
-iab D DSE
-iab g GTO
-iab G GTO
-iab i ISG
-iab I ISG
-iab l <LEFT>*LBL
-iab L <LEFT>*LBL
-iab p PROMPT
-iab P PROMPT
-iab q XEQ
-iab Q XEQ
-iab r RCL
-iab R RCL
-iab s STO
-iab S STO
-iab t RTN
-iab T RTN
-iab v VIEW
-iab V VIEW
-iab < X<>Y
+iab av AVIEW
+iab ar ARCL 
+iab as ASTO 
+iab en ENTER
+iab gt GTO 
+iab ge GETREC
+iab lb LBL 
+iab pr PROMPT
+iab sa SAVEREC
+iab st STO 
+iab rc RCL 
+iab vi VIEW
+iab xe XEQ 
+iab <> X<>Y
 iab . STOP
 
 if !exists("*s:Renumber")
-    function Renumber()
-	let s:linenumber = line(".")
-	let s:colnumber = col(".")
-	call cursor(2,1)
-	let @r = 1
-        exe "normal 0cw".printf("%03d", @r)
-	2,$s#^\d\d\d#\=printf("%03d", @r + setreg('r', @r+1))#
-	call cursor(s:linenumber,s:colnumber)
+  function Renumber()
+		let s:linenumber = line(".")
+		let s:colnumber = col(".")
+		exe "normal gg"
+		exe search("001")
+		let s:linestart = line(".")
+		let s:colstart = col(".")
+		call cursor(s:linestart,s:colstart)
+		let @r = 1
+    exe "normal 0cw".printf("%03d", @r)
+		2,$s#^\d\d\d#\=printf("%03d", @r + setreg('r', @r+1))#
+		call cursor(s:linenumber,s:colnumber)
     endfunction
 endif
