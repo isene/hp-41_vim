@@ -19,36 +19,23 @@ This ftplugin has the following features:
 Auto-line-numbering: Upon pressing <CR> after a line, the next line has the correct line number. It even renumbers the whole file automatically. So, if you add new lines in the middle of a program, it renumbers the whole file. If you delete a line, just hit Enter to renumber the file (either in Normal or Insert mode) 
 Also, abbreviations of usual commands: 
 ```
-    iab a AVIEW 
-    iab A AVIEW 
-    iab c CLX 
-    iab C CLX 
-    iab d DSE 
-    iab D DSE 
-    iab e ENTER 
-    iab E ENTER 
-    iab g GTO 
-    iab G GTO 
-    iab i ISG 
-    iab I ISG 
-    iab l <LEFT>*LBL 
-    iab L <LEFT>*LBL 
-    iab p PROMPT 
-    iab P PROMPT 
-    iab r RCL 
-    iab R RCL 
-    iab s STO 
-    iab S STO 
-    iab t RTN 
-    iab T RTN 
-    iab v VIEW 
-    iab V VIEW 
-    iab x XEQ 
-    iab X XEQ 
-    iab y X<>Y 
-    iab Y X<>Y 
-    iab . STOP 
+	iab av AVIEW
+	iab ar ARCL
+	iab as ASTO
+	iab en ENTER
+	iab gt GTO
+	iab ge GETREC
+	iab lb LBL
+	iab pr PROMPT
+	iab sa SAVEREC
+	iab st STO
+	iab rc RCL
+	iab vi VIEW
+	iab xe XEQ
+	iab <> X<>Y
+	iab . STOP
 ```
+You can jump to a numeric LBL if you have the cursor on a line with a numeric GTO or XEQ and press "gL".
 
 #### Install details
 Drop the hp41.vim syntax file into your .vim/ftplugin/ directory and register the file globally or add to your .vimrc file: 
