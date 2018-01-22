@@ -1,8 +1,8 @@
 " Vim filetype plugin
 " Language:     HP-41
-" Version:	0.8.3
+" Version:			0.9
 " Maintainer:   Geir Isene
-" Last Change:  2012-02-05
+" Last Change:  2018-01-22
 " URL:          http://isene.com/
 
 " Only do this when not done yet for this buffer
@@ -15,8 +15,8 @@ let b:did_ftplugin = 1
 
 set nrformats-=octal
 
-map <CR> :call Renumber()<CR>
-imap <CR> <CR><C-Y><C-Y><C-Y><SPACE><ESC>0<C-A>:call Renumber()<CR>A
+imap <CR> <CR><C-O>:call Renumber()<CR>
+
 iab av AVIEW
 iab ar ARCL 
 iab as ASTO 
@@ -35,18 +35,21 @@ iab . STOP
 
 if !exists("*s:Renumber")
   function Renumber()
-		let s:linenumber = line(".")
-		let s:colnumber = col(".")
-		exe "normal gg"
-		exe search("001")
-		let s:linestart = line(".")
-		let s:colstart = col(".")
-		call cursor(s:linestart,s:colstart)
-		let @r = 1
-    exe "normal 0cw".printf("%03d", @r)
-		2,$s#^\d\d\d#\=printf("%03d", @r + setreg('r', @r+1))#
-		call cursor(s:linenumber,s:colnumber)
-    endfunction
+		let linenumber = line(".")
+		let prevline = getline(linenumber - 1)
+		let colnumber = col(".")
+		if match(prevline,'^[0-9][0-9]') >= 0
+			if search("001") > 0
+				call cursor(linenumber,colnumber)
+				exe "normal i  "
+				let @r = 1
+				exe "normal 0cw".printf("%03d", @r)
+				2,$s#^\d\d\d#\=printf("%03d", @r + setreg('r', @r+1))#
+				call cursor(linenumber,colnumber)
+				exe "normal A"
+			endif
+		endif
+  endfunction
 endif
 
 if !exists("*GTOLBL") 
