@@ -18,18 +18,18 @@ set nrformats-=octal
 imap <CR> <CR><C-O>:call Renumber()<CR>
 
 iab av AVIEW
-iab ar ARCL 
-iab as ASTO 
+iab ar ARCL
+iab as ASTO
 iab en ENTER
-iab gt GTO 
+iab gt GTO
 iab ge GETREC
-iab lb LBL 
+iab lb LBL
 iab pr PROMPT
 iab sa SAVEREC
-iab st STO 
-iab rc RCL 
+iab st STO
+iab rc RCL
 iab vi VIEW
-iab xe XEQ 
+iab xe XEQ
 iab <> X<>Y
 iab . STOP
 
