@@ -15,7 +15,8 @@ elseif exists("b:current_syntax")
 endif
 
 syntax match  hp41LineNumber	"^ *[0-9]*"
-syntax match  hp41Cond		" [A-Z<>=0-9].\{-}?[A-Z0-9]\{-}\( \|$\)"
+"syntax match  hp41Cond		" [A-Z<>=0-9].\{-}?[A-Z0-9]\{-}\( \|$\)"
+syntax match  hp41Comment	";.*"
 syntax match  hp41Alpha		"\".*\""
 syntax match  hp41LBL		".\=LBL.*"          contains=hp41Alpha
 syntax match  hp41GTO		" GTO [0-9]*"       contains=hp41Alpha
@@ -41,7 +42,8 @@ if version >= 508 || !exists("did_crontab_syn_inits")
   HiLink hp41RTN		Define
   HiLink hp41END		Define
   HiLink hp41Alpha		Function
-  HiLink hp41Cond		Comment
+  HiLink hp41Comment		Comment
+"  HiLink hp41Cond		Comment
 
   delcommand HiLink
 endif
