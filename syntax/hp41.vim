@@ -18,9 +18,9 @@ syntax match  hp41LineNumber	"^ *[0-9]*"
 "syntax match  hp41Cond		" [A-Z<>=0-9].\{-}?[A-Z0-9]\{-}\( \|$\)"
 syntax match  hp41Comment	";.*"
 syntax match  hp41Alpha		"\".*\""
-syntax match  hp41LBL		".\=LBL.*"      contains=hp41Alpha
-syntax match  hp41GTO		" GTO .*"       contains=hp41Alpha
-syntax match  hp41XEQ		" XEQ .*"       contains=hp41Alpha
+syntax match  hp41LBL		".\=LBL.*"      contains=hp41Alpha,hp41Comment
+syntax match  hp41GTO		" GTO .*"       contains=hp41Alpha,hp41Comment
+syntax match  hp41XEQ		" XEQ .*"       contains=hp41Alpha,hp41Comment
 syntax match  hp41RTN		" RTN"
 syntax match  hp41END		" END"
 
