@@ -43,3 +43,6 @@ Drop the hp41.vim syntax file into your .vim/ftplugin/ directory and register th
 `autocmd BufRead,BufNewFile *.41 :source ~/.vim/ftplugin/hp41.vim`
 
 ...and you are ready for easy HP-41 program writing.
+
+## License
+This software is released into the Public Domain.
