@@ -16,7 +16,7 @@ Then all files with the .41 extesion will be highlighted appropriately.
 
 This ftplugin has the following features: 
 
-Auto-line-numbering: Upon pressing <CR> after a line, the next line has the correct line number. It even renumbers the whole file automatically. So, if you add new lines in the middle of a program, it renumbers the whole file. If you delete a line, just hit Enter to renumber the file (either in Normal or Insert mode) 
+Auto-line-numbering: Upon pressing <CR> after a line, the next line has the correct line number. It even renumbers the whole file automatically. So, if you add new lines in the middle of a program, it renumbers the whole file. To renumber the whole file while in Normal mode, use Ctrl+R.
 Also, abbreviations of usual commands: 
 ```
 	iab av AVIEW
