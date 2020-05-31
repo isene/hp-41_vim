@@ -16,7 +16,7 @@ let b:did_ftplugin = 1
 set nrformats-=octal
 
 imap <CR> <CR><C-O>:call Renumber()<CR>
-nmap <C-R> GA<BS><CR><ESC>dd''
+nmap <C-R> GA<CR><ESC>dd''
 
 iab av AVIEW
 iab ar ARCL
