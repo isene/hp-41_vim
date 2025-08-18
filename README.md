@@ -1,4 +1,10 @@
 # hp-41_vim
+
+[![HP-41](https://img.shields.io/badge/HP--41-Calculator-orange)](https://en.wikipedia.org/wiki/HP-41C)
+[![License](https://img.shields.io/badge/License-Public%20Domain-brightgreen.svg)](https://unlicense.org/)
+[![GitHub stars](https://img.shields.io/github/stars/isene/hp-41_vim.svg)](https://github.com/isene/hp-41_vim/stargazers)
+[![Stay Amazing](https://img.shields.io/badge/Stay-Amazing-blue.svg)](https://isene.org)
+
 ## HP-41: Syntax and filetype plugin
 
 ### VIM syntax highlighting for HP-41 program files (\*.41)
