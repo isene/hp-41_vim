@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="200" height="200" fill="#0f1419"/>
+  
+  <!-- VIM editor window -->
+  <rect x="25" y="30" width="150" height="130" rx="5" fill="#1e1e1e" stroke="#444" stroke-width="2"/>
+  
+  <!-- VIM title bar -->
+  <rect x="25" y="30" width="150" height="20" rx="5 5 0 0" fill="#2d2d2d"/>
+  <text x="100" y="43" font-family="monospace" font-size="9" fill="#fff" text-anchor="middle">program.41 - VIM</text>
+  
+  <!-- HP-41 calculator (smaller) -->
+  <g transform="translate(160, 40)">
+    <!-- Calculator body -->
+    <rect x="-15" y="-10" width="30" height="40" rx="3" fill="#2c2c2c" stroke="#444" stroke-width="1"/>
+    <!-- Display -->
+    <rect x="-12" y="-7" width="24" height="6" rx="1" fill="#0a4d0a" stroke="#333" stroke-width="0.5"/>
+    <text x="0" y="-2" font-family="monospace" font-size="3" fill="#00ff00" text-anchor="middle">RUNNING...</text>
+    <!-- Keyboard simplified -->
+    <g fill="#1a1a1a" stroke="#666" stroke-width="0.3">
+      <rect x="-10" y="3" width="4" height="3" rx="0.3"/>
+      <rect x="-4" y="3" width="4" height="3" rx="0.3"/>
+      <rect x="2" y="3" width="4" height="3" rx="0.3"/>
+      <rect x="8" y="3" width="4" height="3" rx="0.3"/>
+    </g>
+  </g>
+  
+  <!-- Code editor content with HP-41 syntax -->
+  <g font-family="monospace" font-size="7">
+    <!-- Line numbers -->
+    <g fill="#666">
+      <text x="30" y="65">001</text>
+      <text x="30" y="73">002</text>
+      <text x="30" y="81">003</text>
+      <text x="30" y="89">004</text>
+      <text x="30" y="97">005</text>
+      <text x="30" y="105">006</text>
+      <text x="30" y="113">007</text>
+      <text x="30" y="121">008</text>
+      <text x="30" y="129">009</text>
+      <text x="30" y="137">010</text>
+    </g>
+    
+    <!-- HP-41 code with syntax highlighting -->
+    <g>
+      <!-- Labels highlighted -->
+      <text x="50" y="65" fill="#c586c0">*LBL "SOLVE"</text>
+      
+      <!-- Comments highlighted -->
+      <text x="50" y="73" fill="#6a9955">; Initialize solver</text>
+      
+      <!-- Instructions -->
+      <text x="50" y="81" fill="#569cd6">CF</text>
+      <text x="65" y="81" fill="#d7ba7d">25</text>
+      
+      <text x="50" y="89" fill="#569cd6">CLRG</text>
+      
+      <text x="50" y="97" fill="#9cdcfe">"FUNCTION?"</text>
+      
+      <text x="50" y="105" fill="#569cd6">PROMPT</text>
+      
+      <text x="50" y="113" fill="#569cd6">STO</text>
+      <text x="70" y="113" fill="#d7ba7d">01</text>
+      
+      <text x="50" y="121" fill="#569cd6">XEQ</text>
+      <text x="70" y="121" fill="#ce9178">IND</text>
+      <text x="90" y="121" fill="#d7ba7d">01</text>
+      
+      <text x="50" y="129" fill="#569cd6">RCL</text>
+      <text x="70" y="129" fill="#d7ba7d">02</text>
+      
+      <text x="50" y="137" fill="#c586c0">*LBL 01</text>
+    </g>
+    
+    <!-- Cursor -->
+    <rect x="85" y="130" width="1" height="8" fill="#fff">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- VIM mode indicator -->
+  <rect x="25" y="145" width="150" height="15" fill="#2d2d2d"/>
+  <text x="30" y="155" font-family="monospace" font-size="8" fill="#00ff00">-- NORMAL --</text>
+  <text x="170" y="155" font-family="monospace" font-size="8" fill="#666" text-anchor="end">10,8</text>
+  
+  <!-- Syntax highlighting legend -->
+  <g transform="translate(35, 175)" opacity="0.8">
+    <text x="0" y="0" font-family="monospace" font-size="6" fill="#fff">Syntax Highlighting:</text>
+    
+    <rect x="0" y="3" width="8" height="6" fill="#c586c0"/>
+    <text x="10" y="8" font-family="monospace" font-size="5" fill="#c586c0">Labels</text>
+    
+    <rect x="40" y="3" width="8" height="6" fill="#569cd6"/>
+    <text x="50" y="8" font-family="monospace" font-size="5" fill="#569cd6">Instructions</text>
+    
+    <rect x="90" y="3" width="8" height="6" fill="#d7ba7d"/>
+    <text x="100" y="8" font-family="monospace" font-size="5" fill="#d7ba7d">Numbers</text>
+  </g>
+  
+  <!-- VIM logo -->
+  <g transform="translate(15, 15)" opacity="0.6">
+    <text x="0" y="0" font-family="serif" font-size="10" fill="#019833" font-weight="bold">VIM</text>
+  </g>
+  
+  <!-- Features -->
+  <g transform="translate(110, 175)" opacity="0.7">
+    <text x="0" y="0" font-family="monospace" font-size="6" fill="#fff">Features:</text>
+    <text x="0" y="8" font-family="monospace" font-size="5" fill="#60a5fa">• Auto-completion</text>
+    <text x="0" y="14" font-family="monospace" font-size="5" fill="#60a5fa">• Syntax check</text>
+    <text x="0" y="20" font-family="monospace" font-size="5" fill="#60a5fa">• Code folding</text>
+  </g>
+  
+  <!-- Connection indicator -->
+  <g transform="translate(140, 65)" opacity="0.7">
+    <path d="M 0,0 L 10,0 L 7,-3 M 10,0 L 7,3" stroke="#60a5fa" stroke-width="1.5" fill="none">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Text -->
+  <text x="100" y="192" font-family="monospace" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">HP-41 VIM Plugin</text>
+  <text x="100" y="202" font-family="monospace" font-size="8" fill="#888" text-anchor="middle">Syntax Highlighting for .41 Files</text>
+</svg>
