@@ -14,12 +14,28 @@
 
 The HP-41 syntax highlighting goes well with the HP-41 file type plugin to facilitate easy writing of HP-41 programs in VIM. 
 
+Each step takes the colour of what it does:
+
+| Steps | Colour |
+|---|---|
+| Labels (LBL) | gold, bold |
+| Jumps (GTO, XEQ) | purple |
+| Stops (RTN, END, STOP, PROMPT) | red |
+| Tests (X=Y?, FS?C, ISG, DSE) | orange |
+| Registers and flags (STO, RCL, ST+, X<>, SF, CF) | blue |
+| Text ("ABC") | green |
+| Numbers | cyan |
+| Line numbers, XROM and comments | grey |
+
+A light terminal gets darker shades of the same colours. The
+[dm41](https://github.com/isene/dm41) program shows listings in the same colours.
+
 #### Install details
 Drop the hp41.vim syntax file into your .vim/syntax/ directory and register the file globally or add to your .vimrc file: 
 
 `autocmd BufRead,BufNewFile *.41 :source ~/.vim/syntax/hp41.vim`
 
-Then all files with the .41 extesion will be highlighted appropriately.
+Then all files with the .41 extension will be highlighted appropriately.
 
 ### VIM filetype plugin for HP-41 program files (\*.41)
 
